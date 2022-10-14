@@ -11,12 +11,13 @@ export class NewsappComponent implements OnInit {
   constructor(private myapi:ApiService) {
     this.fetchData()
    }
-
+status:boolean=false
 
   fetchData=()=>{
     this.myapi.viewNews().subscribe(
       (data)=>{
         this.newsData=data
+        this.status=true
       }
     )
   }
